@@ -2,8 +2,8 @@
     <head>
         <style>
         .container {
-            max-width: 100px;
-            margin: 20px auto;
+            max-width: 800px;
+            margin: 210px auto;
             background-color: skyblue;
             padding: 10px;
             border-radius: 8px;
@@ -14,9 +14,9 @@
 
         .front {
             background-color: goldenrod;
-            max-width: 900px;
+            max-width: 100px;
             margin: auto;
-            margin-top: 150px;
+            margin-top: 30px;
             border-radius: 8px;
             
         }
@@ -40,7 +40,22 @@
         }
         </style>
     </head>
-    <body>
-        
+    <body class="container">
+        <h1> Please, select the way you want to login ! </h1>
+        <div class="front">
+            <div>
+                <button class="login" onclick="location.href='alogin.html'">
+                    Admin Login
+                </button>
+            </div>
+            <div>
+                <button class="login" onclick="location.href='mlogin.html'">
+                    Manager Login
+                </button>
+                <button class="login" onclick="location.href='clogin.html'">
+                    Customer Login
+                </button>
+            </div>
+        </div>
     </body>
 </html>
