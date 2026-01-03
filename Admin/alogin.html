@@ -2,8 +2,8 @@
     <head>
         <style>
         .container {
-            max-width: 100px;
-            margin: 20px auto;
+            max-width: 800px;
+            margin: 210px auto;
             background-color: skyblue;
             padding: 10px;
             border-radius: 8px;
@@ -14,9 +14,9 @@
 
         .front {
             background-color: goldenrod;
-            max-width: 900px;
+            max-width: 100px;
             margin: auto;
-            margin-top: 150px;
+            margin-top: 30px;
             border-radius: 8px;
             
         }
@@ -40,11 +40,35 @@
         }
         </style>
     </head>
-    <body>
-        <div class="front">
+    <body class="container">
+        <h1 class="center-text" > Login Form</h1>
+        <div class="container">
+            <form action="login_validation.php">
 
-        
+                <table>
+                    
+                    <tr>
+                        <td style="color: white;">E-mail  </td>
+                    </tr>
+                    <tr>
+                        <td><input type="email" placeholder="Enter Your E-mail" /></td>
+                    </tr>
+                    <tr>
+                        <td style="color: white;">Password</td>
+                    </tr>
+                    <tr >
+                        <td><input type="password" name="password" placeholder="" /></td>
+                    </tr>
+                    <tr>
+                        <td style="color: white;">Don't have an account ?</td>
+                        <td style="color: blue;"><a href="http://localhost/Project_Folder/Registration.html">Sign Up</a> </td>
+                    </tr>
+                </table>
+
+                <button class="login" type="submit"> Submit
+                </button>
+            </form>
+
         </div>
-        
     </body>
 </html>
