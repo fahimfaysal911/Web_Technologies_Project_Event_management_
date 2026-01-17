@@ -24,6 +24,7 @@ unset( $_SESSION["loginErr"]);
 
 <html>
     <head>
+        <script src="../Controller/JS/a_test.js"></script>
         <style>
         .container {
             max-width: 800px;
