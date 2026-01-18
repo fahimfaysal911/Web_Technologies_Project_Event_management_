@@ -1,5 +1,6 @@
 <?php
 
+
 $encoded_email  = $_COOKIE["email"] ?? "";
 $email = json_decode($encoded_email);
 if(!isset($_COOKIE["isLoggedIn"])){
