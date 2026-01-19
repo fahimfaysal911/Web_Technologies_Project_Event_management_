@@ -51,6 +51,7 @@ if(count($errors) > 0){
         setcookie("email", json_encode($email), time() + 3600,"/");
 
         Header("Location: ../View/a_dashboard.php");
+        exit();
     }else{
         $_SESSION["loginErr"] = "Email or Password is incorrect";
         Header("Location: ../View/a_login.php");
