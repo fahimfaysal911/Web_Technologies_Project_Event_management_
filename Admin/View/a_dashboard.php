@@ -15,19 +15,30 @@ if(!isset($_COOKIE["isLoggedIn"])){
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            background-color:skyblue;
+            padding: 20px;
+            background-color: skyblue;
+            text-align: center;
+            border-radius: 8px;
         }
+        
         .cart1 {
-            max-width: 950px;
-            background-color: white;
-            padding: 30px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            background-color: blanchedalmond;
+            max-width: 1000px;
+            margin: 20px auto;
+            display: flex;
+            gap: 20px;
 
         }
+
+        /*table {
+            background-color: blanchedalmond;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            border-collapse: collapse;
+            text-align: center;
+            width: 280px;
+        }*/
+
         table:hover{
             background-color: skyblue;
         }
@@ -47,6 +58,7 @@ if(!isset($_COOKIE["isLoggedIn"])){
            
         }
         .event-desc {
+            font-size: 14px;
             text-align: left;
             font-weight: light;
             
@@ -55,6 +67,25 @@ if(!isset($_COOKIE["isLoggedIn"])){
             text-align: left;
             font-weight: bolder;
             color: brown;
+        }
+        .event-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .buy-link {
+            text-decoration: none;
+            background: #008CBA;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+        }
+        .buy-link:hover{
+            background-color: red;
+        }
+        body {
+            font-family: Arial, sans-serif;
         }
 
         </style>
@@ -72,14 +103,14 @@ if(!isset($_COOKIE["isLoggedIn"])){
                     <td class="event-name" >Birthday<td>
                 </tr>
                 <tr>
-                    <td><img src="Birthday.jpg" alt="Birthday"></td>
+                    <td><img src="Birthday.jpg" alt="Birthday" class="event-img"></td>
                 </tr>
                 
                 <tr>
                     <td class="event-desc"> Another Year, Another Reason to Celebrate! </td>
                 </tr>
                 <tr>
-                    <td class="event-price"> Price - $199</td>
+                    <td class="event-price"> Price - $199 (for 1 day).</td>
                 </tr>
                 <tr>
                     <td> <a href="https://www.asus.com/bd/laptops/for-students/all-series/" class="buy-link">Fill details. </a></td>
@@ -92,14 +123,14 @@ if(!isset($_COOKIE["isLoggedIn"])){
                     <td class="event-name" >Wedding<td>
                 </tr>
                 <tr>
-                    <td><img src="Wedding.png" alt="Wedding"></td>
+                    <td><img src="Wedding.jpg" alt="Wedding" class="event-img"></td>
                 </tr>
                 
                 <tr>
                     <td class="event-desc">Two Hearts, One Journey ! From This Day Forward. </td>
                 </tr>
                 <tr>
-                    <td class="event-price"> Price - $599</td>
+                    <td class="event-price"> Price - $599 (for 1 day).</td>
                 </tr>
                 <tr>
                     <td> <a href="https://www.asus.com/bd/laptops/for-students/all-series/" class="buy-link">Fill details. </a></td>
@@ -111,14 +142,14 @@ if(!isset($_COOKIE["isLoggedIn"])){
                     <td class="event-name" >Baby Shower<td>
                 </tr>
                 <tr>
-                    <td><img src="Babyshower.jpg" alt="BabyShower"></td>
+                    <td><img src="Babyshower.jpg" alt="BabyShower" class="event-img"></td>
                 </tr>
                 
                 <tr>
                     <td class="event-desc">Because Every Baby Deserves a Grand Welcome !</td>
                 </tr>
                 <tr>
-                    <td class="event-price"> Price - $399</td>
+                    <td class="event-price"> Price - $399 (for 1 day).</td>
                 </tr>
                 <tr>
                     <td> <a href="https://www.asus.com/bd/laptops/for-students/all-series/" class="buy-link">Fill details. </a></td>

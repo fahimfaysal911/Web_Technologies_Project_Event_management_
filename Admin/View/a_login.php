@@ -95,7 +95,9 @@ unset( $_SESSION["loginErr"]);
                 </table>
 
                 <button class="login" type="submit" name="login"> Submit</button>
-                
+                <button class="login" type="button" onclick="location.href='../../Front.html'">
+                    Back
+                </button>
                 <table>
                     <tr>
                         <td style="color: white;">Don't have an account ?</td>
