@@ -72,102 +72,63 @@ if(!isset($_COOKIE["isLoggedIn"])){
                     <td class="event-name" >Birthday<td>
                 </tr>
                 <tr>
-                    <td><img src="Laptop1.jpg" alt="Birthday"></td>
+                    <td><img src="Birthday.jpg" alt="Birthday"></td>
                 </tr>
                 
                 <tr>
-                    <td class="event-desc">High-performance laptop for work and gaming.</td>
+                    <td class="event-desc"> Another Year, Another Reason to Celebrate! </td>
                 </tr>
                 <tr>
-                    <td class="product-price"> Price - $199</td>
+                    <td class="event-price"> Price - $199</td>
                 </tr>
                 <tr>
-                    <td> <a href="https://www.asus.com/bd/laptops/for-students/all-series/" class="buy-link">Buy Now</a></td>
-                </tr>
-                
-            </table>
-            <table border="10px">
-                <tr>
-                    <td class="product-name" >Headphone<td>
-                </tr>
-                <tr>
-                    <td><img src="Headphone1.jpg" alt="Headphone"></td>
-                </tr>
-                
-                <tr>
-                    <td class="product-desc">High-performance headphone for work and gaming.</td>
-                </tr>
-                <tr>
-                    <td class="product-price"> Price - $99</td>
-                </tr>
-                <tr>
-                    <td> <a href="https://smartbd.com/product/xtreme-x50rg-rgb-gaming-headphone/" class="buy-link">Buy Now</a></td>
-                </tr>
-            </table>
-            <table border="10px">
-                <tr>
-                    <td class="product-name" >Headphone<td>
-                </tr>
-                <tr>
-                    <td><img src="headphone2.jpg" alt="Headphone1"></td>
-                </tr>
-                
-                <tr>
-                    <td class="product-desc">High-performance headphone for work and gaming.</td>
-                </tr>
-                <tr>
-                    <td class="product-price"> Price - $119</td>
-                </tr>
-                <tr>
-                    <td> <a href="https://sourceofproduct.com/product/havit-h2013d-rgb-gaming-headphone/" class="buy-link">Buy Now</a></td>
-                </tr>
-            </table>
-        </div>
-        <div class="cart1" style="display: flex; gap: 20px;">
-            <table border="10px">
-                <tr>
-                    <td class="product-name" >Baby Shower<td>
-                </tr>
-                <tr>
-                    <td><img src="Smartwatch.jpg" alt="Smartwatch"></td>
-                </tr>
-                
-                <tr>
-                    <td class="product-desc">Stylish watch for work and casual wear.</td>
-                </tr>
-                <tr>
-                    <td class="product-price"> Price - $59</td>
-                </tr>
-                <tr>
-                    <td> <a href="https://www.gadstyle.com/item/167415/samsung-galaxy-watch-7-ai-smart-watch-40mm-44mm/" class="buy-link">Buy Now</a></td>
+                    <td> <a href="https://www.asus.com/bd/laptops/for-students/all-series/" class="buy-link">Fill details. </a></td>
                 </tr>
                 
             </table>
+
             <table border="10px">
                 <tr>
-                    <td class="product-name" >Smartwatch<td>
+                    <td class="event-name" >Wedding<td>
                 </tr>
                 <tr>
-                    <td><img src="smartwatch1.jpg" alt="Smartwatch"></td>
+                    <td><img src="Wedding.png" alt="Wedding"></td>
                 </tr>
                 
                 <tr>
-                    <td class="product-desc">Stylish watch for work and casual wear.</td>
+                    <td class="event-desc">Two Hearts, One Journey ! From This Day Forward. </td>
                 </tr>
                 <tr>
-                    <td class="product-price"> Price - $49</td>
+                    <td class="event-price"> Price - $599</td>
                 </tr>
                 <tr>
-                    <td> <a href="https://zeblazebangladesh.com/product/zeblaze-beyond-3-pro/" class="buy-link">Buy Now</a></td>
+                    <td> <a href="https://www.asus.com/bd/laptops/for-students/all-series/" class="buy-link">Fill details. </a></td>
+                </tr>
+            </table>
+
+            <table border="10px">
+                <tr>
+                    <td class="event-name" >Baby Shower<td>
+                </tr>
+                <tr>
+                    <td><img src="Babyshower.jpg" alt="BabyShower"></td>
                 </tr>
                 
+                <tr>
+                    <td class="event-desc">Because Every Baby Deserves a Grand Welcome !</td>
+                </tr>
+                <tr>
+                    <td class="event-price"> Price - $399</td>
+                </tr>
+                <tr>
+                    <td> <a href="https://www.asus.com/bd/laptops/for-students/all-series/" class="buy-link">Fill details. </a></td>
+                </tr>
             </table>
         </div>
         
+        
     </body>
-
-<body>
-    
-    <a href="..\Controller\a_logout.php">Logout</a>
-</body>
+    <body>
+        <a href="..\Controller\a_logout.php">Logout</a>
+    </body>
 </html>
