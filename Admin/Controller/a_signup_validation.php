@@ -1,7 +1,7 @@
 <?php
-include "../Model/a_database_connection.php";
+include "../Model/DatabaseConnection.php";
 
-$path = __DIR__."/../Model/a_database_connection.php";
+$path = __DIR__."/../Model/DatabaseConnection.php";
 if(!file_exists($path)){
     die("Database File not found");
 }
@@ -15,7 +15,6 @@ $pass = "";
 
 $email = $_POST["email"];
 $pass = $_POST["password"];
-$name = $_POST["name"] ?? "";
 $uploadFile = $_FILES["uploadFile"] ?? null;
 
 echo "Email - $email";
@@ -24,9 +23,6 @@ echo "password - $pass";
 
 $errors = [];
 $previousValues = [];
-if(!$name){
-    $errors["name"] = "Name field is required";
-}
 if(!$email){
 $errors["email"] = "Email field is required";
 }
@@ -36,9 +32,9 @@ if(!$pass){
 if(count($errors) > 0){
     $_SESSION["errors"] = $errors;
     if(!$email){
-        $_SESSION["emailError"] = $errors["email"];
+        $_SESSION["emailError"] = $errors["email"]; // store in session
     }else{
-        unset($_SESSION["emailError"]);
+        unset($_SESSION["emailError"]); //remove from session
     }
 
     if(!$pass){
@@ -47,12 +43,11 @@ if(count($errors) > 0){
          unset($_SESSION["passwordError"]);
     }
 
-    $previousValues["email"] = $email;
-    $previousValues["name"] = $name;
 
+    $previousValues["email"] = $email;
     $_SESSION["previousValues"] = $previousValues;
 
-    Header("Location: ..\View\a_signup.php");
+    Header("Location: ..\View\signup.php");
 
 }else{
     unset($_SESSION['errors']);
@@ -60,19 +55,20 @@ if(count($errors) > 0){
     unset($_SESSION["signupErr"]);
     $path = "";
     if($uploadFile){
-        $targetDir = "../Uploads/";
+        $targetDir = "../uploads/";
         $path = $targetDir.basename($uploadFile["name"]);
         $isUploaded = move_uploaded_file($uploadFile["tmp_name"],$path);
     }
+    //Validation Success
     $db = new DatabaseConnection();
     $connection = $db->openConnection();
-    $result = $db->signup($connection, "admin", $name,$email, $pass, $path);
+    $result = $db->signup($connection, "users", $email, $pass, $path);
 
     if($result){
-        Header("Location: ..\View\a_login.php");
+        Header("Location: ..\View\m_login.php");
     }else{
         $_SESSION["signupErr"] = "Sign up failed..";
-        Header("Location: ..\View\a_signup.php");
+        Header("Location: ..\View\m_register.php");
     }
 
     

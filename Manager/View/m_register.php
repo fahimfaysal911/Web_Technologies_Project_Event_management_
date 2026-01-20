@@ -5,7 +5,7 @@ $isLoggedIn = false;
 $isLoggedIn = $_SESSION["isLoggedIn"] ?? false;
 
 if($isLoggedIn){
-    Header("Location: ./dashboard.php");
+    Header("Location: ./m_dashbord.php");
 }
 
 
@@ -26,7 +26,7 @@ unset($_SESSION["signupErr"]);
     </head>
 
 <body>
-    <form method="post" action="..\Controller\SignUpValidation.php" enctype="multipart/form-data">
+    <form method="post" action="..\Controller\m_register_validation.php" enctype="multipart/form-data">
         <table>
             <tr>
                 <td>

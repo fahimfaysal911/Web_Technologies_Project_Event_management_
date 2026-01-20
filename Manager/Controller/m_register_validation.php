@@ -1,7 +1,7 @@
 <?php
-include "../Model/databaseconnection.php";
+include "../Model/DatabaseConnection.php";
 
-$path = __DIR__."/../Model/databaseconnection.php";
+$path = __DIR__."/../Model/DatabaseConnection.php";
 if(!file_exists($path)){
     die("Database File not found");
 }
@@ -47,7 +47,7 @@ if(count($errors) > 0){
     $previousValues["email"] = $email;
     $_SESSION["previousValues"] = $previousValues;
 
-    Header("Location: ..\View\signup.php");
+    Header("Location: ..\View\m_register.php");
 
 }else{
     unset($_SESSION['errors']);
@@ -62,13 +62,13 @@ if(count($errors) > 0){
     //Validation Success
     $db = new DatabaseConnection();
     $connection = $db->openConnection();
-    $result = $db->signup($connection, "users", $email, $pass, $path);
+    $result = $db->signup($connection, "manager", $email, $pass, $path);
 
     if($result){
-        Header("Location: ..\View\login.php");
+        Header("Location: ..\View\m_login.php");
     }else{
         $_SESSION["signupErr"] = "Sign up failed..";
-        Header("Location: ..\View\signup.php");
+        Header("Location: ..\View\m_register.php");
     }
 
     

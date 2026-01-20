@@ -1,3 +1,5 @@
+
+
 <?php
 // session_start();
 // $isLoggedIn = $_SESSION["isLoggedIn"] ?? false;
@@ -14,11 +16,18 @@ if(!isset($_COOKIE["isLoggedIn"])){
 ?>
 
 <html>
-
+    
 <body>
-    <h1>Dashboard</h1>
-    <h1>Hi, <?php echo $email;?></h1>
+   <div>
+    <table>
+        <tr><th class="title"> Mahager Dashboard </th></tr>
+        <tr>  </tr>
+
+    </table>
+    <div>
+        <a class="back" href="http://localhost/Event%20Management/Web_Technologies_Project_Event_management_/Manager/View/m_login.php">back</a>
+    </div>
+   </div>
     <a href="..\Controller\logout.php">Logout</a>
-    try commit
 </body>
 </html>

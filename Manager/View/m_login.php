@@ -33,7 +33,7 @@ unset( $_SESSION["loginErr"]);
             background-color: skyblue;
             padding: 10px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(149, 150, 106, 0.25);
             text-align: center;
             
         }
@@ -69,7 +69,7 @@ unset( $_SESSION["loginErr"]);
     <body class="container">
         <h1 class="center-text" >Manager Login Form</h1>
         <div class="container">
-            <form method ="post" action="../Controller/a_login_validation.php">
+            <form method ="post" action="../Controller/m_login_validation.php">
 
                 <table>
                     
@@ -90,7 +90,7 @@ unset( $_SESSION["loginErr"]);
                         <td><?php echo $errors["password"] ?? ''; ?></td>
                     </tr>
                     <tr>
-                        <td></td>
+                    
                         <td><?php echo $loginErr;?></td>
                     </tr>
                 </table>
@@ -100,7 +100,7 @@ unset( $_SESSION["loginErr"]);
                 <table>
                     <tr>
                         <td style="color: white;">Don't have an account ?</td>
-                        <td style="color: blue;"><a href="http://localhost/Event_Management/Web_Technologies_Project_Event_management_/Admin/View/a_register.php">Sign Up</a> </td>
+                        <td style="color: blue;"><a href="http://localhost/Event%20Management/Web_Technologies_Project_Event_management_/Manager/View/m_register.php">Sign Up</a> </td>
                     </tr>
                 </table>
 
