@@ -14,7 +14,6 @@ if(!isset($_COOKIE["isLoggedIn"])){
         <style>
             body {
                 background: DodgerBlue;
-                font-family: Arial, sans-serif;
             }
             .container {
                 width: 500px;
