@@ -19,5 +19,6 @@ if(!isset($_COOKIE["isLoggedIn"])){
     <h1>Dashboard</h1>
     <h1>Hi, <?php echo $email;?></h1>
     <a href="..\Controller\logout.php">Logout</a>
+    try commit
 </body>
 </html>
