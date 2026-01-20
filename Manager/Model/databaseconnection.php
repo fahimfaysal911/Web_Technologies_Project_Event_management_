@@ -1,12 +1,12 @@
 <?php
 
-class DatabaseConnection{
+class dtabaseconnection{
    
     function openConnection(){
         $db_host="localhost";
         $db_user = "root";
         $db_password = "";
-        $db_name = "event_management";
+        $db_name = "priject_management";
 
         $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
         if($connection->connect_error){
@@ -15,16 +15,8 @@ class DatabaseConnection{
         return $connection;
     }
 
-    function signup($connection, $tableName, $email, $password){
-        $sql = "INSERT INTO ".$tableName." (email, password)  VALUES('".$email."', '".$password."')"; ;
-        $result = $connection->query($sql);
-        if(!$result){
-            die("Failed to signup ". $connection->error);
-        }
-        return $result;
-    }
 
-    function signin($connection, $tableName, $email, $password){
+    function signup($connection, $tableName, $email, $password){
         $sql = "SELECT * FROM ".$tableName." WHERE email='".$email."' AND password='".$password."'";
         $result = $connection->query($sql);
         return $result;
@@ -33,19 +25,6 @@ class DatabaseConnection{
     function checkExistingUser($connection, $tableName, $email){
         $sql = "SELECT * FROM ".$tableName." WHERE email='".$email."'";
         $result = $connection->query($sql);
-        return $result;
-    }
-    function getAllUsers($connection, $tableName){
-        $sql = "SELECT * FROM ".$tableName;
-        $result = $connection->query($sql);
-        return $result;
-    }
-
-    function InsertData($connection,$table,$email, $password){
-        $sql = "INSERT INTO users (email,password) VALUES(?,?)";
-        $stmt=$connection->prepare($sql); 
-        $stmt->bind_param("ss",$email,$password);
-        $result = $stmt->execute();
         return $result;
     }
 
