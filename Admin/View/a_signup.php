@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 $isLoggedIn = false;
 
@@ -12,19 +11,20 @@ if($isLoggedIn){
 
 $previousValues = $_SESSION["previousValues"] ?? [];
 
-$loginErr = $_SESSION["loginErr"]  ?? "";
+$signupErr = $_SESSION["signupErr"] ?? "";
 
 $errors = $_SESSION["errors"] ?? [];
 
 unset($_SESSION['errors']);
 unset($_SESSION['previousValues']);
-unset( $_SESSION["loginErr"]);
-
+unset($_SESSION["signupErr"]);
 ?>
 
 <html>
     <head>
-        <script src="../Controller/JS/a_test.js"></script>
+
+        <title>Sign Up</title>
+        <script src="..\Controller\JS\checkEmail.js"></script>
         <style>
 
             body {
@@ -34,7 +34,7 @@ unset( $_SESSION["loginErr"]);
             .container {
                 width: 380px;
                 margin: 120px auto;
-                background-color: cyan;
+                background-color : cyan;
                 padding: 25px;
                 border-radius: 10px;
             }
@@ -55,15 +55,17 @@ unset( $_SESSION["loginErr"]);
             input {
                 width: 100%;
                 padding: 8px;
+                margin-top: 5px;
                 border-radius: 5px;
-                border: 1px solid #ccc;
+                border: 1px;
             }
 
             button {
+                text-align: center;
                 padding: 8px 10px;
                 border-radius: 5px;
                 border: none;
-                background-color: tomato;
+                background-color: tomato ;
                 color: white;
                 cursor: pointer;
             }
@@ -72,56 +74,73 @@ unset( $_SESSION["loginErr"]);
                 background: blue;
             }
 
-            .center {
-                text-align: center;
+            .error {
+                color: red;
+                font-size: 14px;
             }
+
         </style>
     </head>
 
+
     <body>
         <div class="container">
-            <h2>Login</h2>
+            <h2>Create Account</h2>
 
-            <form method="post" action="../Controller/a_login_validation.php">
+            <form method="post" action="..\Controller\a_signup_validation.php" enctype="multipart/form-data">
                 <table>
+                    <tr>
+                        <td>Name</td>
+                        <td>
+                            <input type="text" name="name" placeholder="Enter your name"
+                                value="<?php echo $previousValues['name'] ?? '' ?>">
+                        </td>
+                        <td><?php echo $errors["name"] ?? ''; ?></td>
+                    </tr>
+
                     <tr>
                         <td>Email</td>
                         <td>
-                            <input type="text" name="email" value="<?php echo $previousValues['email'] ?? '' ?>"placeholder="Enter your email">
+                            <input type="text" id="email" name="email" value="<?php echo $previousValues['email'] ?? '' ?>"
+                                onkeyup="findExistingEmail()">
                         </td>
+                        <td id="erroremail"></td>
                         <td><?php echo $errors["email"] ?? ''; ?></td>
                     </tr>
 
                     <tr>
                         <td>Password</td>
                         <td>
-                            <input type="password" name="password" placeholder="Enter password">
+                            <input type="password" id="password" name="password">
                         </td>
                         <td><?php echo $errors["password"] ?? ''; ?></td>
                     </tr>
 
                     <tr>
                         <td></td>
-                        <td><?php echo $loginErr; ?></td>
+                        <td><?php echo $signupErr; ?></td>
                     </tr>
 
                     <tr>
-                        <td class="center">
-                            <button type="submit" name="login">Login</button>
+                        <td>Upload File</td>
+                        <td>
+                            <input type="file" id="uploadFile" name="uploadFile">
                         </td>
                     </tr>
 
                     <tr>
-                        <td class="center">
-                            <a href="../../Front.html"><button type="button">Back</button></a>
+                        <td>
+                            <button type="submit" name="signup">Sign Up</button>
                         </td>
                     </tr>
                     <tr>
-                        <td class="center">Don't have an account ?</td>
-                        <td class="center"><a href="http://localhost/Event_Management/Web_Technologies_Project_Event_management_/Admin/View/a_signup.php">Sign Up</a> </td>
+                        <td>
+                            <a href="a_login.php"><button type="button">Back</button></a>
+                        </td>
                     </tr>
                 </table>
             </form>
+
         </div>
     </body>
 </html>
