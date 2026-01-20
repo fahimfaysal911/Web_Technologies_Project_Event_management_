@@ -64,6 +64,22 @@ unset( $_SESSION["loginErr"]);
             border-radius: 8px;
 
         }
+
+        .back-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 25px;
+            font-size: 16px;
+            background-color: #34495e;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background-color: #2c3e50;
+        }
         </style>
     </head>
     <body class="container">
@@ -108,5 +124,8 @@ unset( $_SESSION["loginErr"]);
             </form>
 
         </div>
+
+        <!-- Back Button -->
+<button class="back-btn" onclick="history.back()">Back</button>
     </body>
 </html>
