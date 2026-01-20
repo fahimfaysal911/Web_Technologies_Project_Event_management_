@@ -38,14 +38,79 @@ function TableRow(){
     $db->closeConnection($connection);
 }
 
-TableHeader();
-TableRow();
 ?>
 
 <html>
+    <head>
+        <style>
+            body {
+                background: DodgerBlue;
+            }
+
+            .container {
+                width: 90%;
+                max-width: 900px;
+                margin: 60px auto;
+                background-color: cyan;
+                padding: 25px;
+                border-radius: 10px;
+            }
+
+            h2 {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 10px;
+            }
+
+            th, td {
+                padding: 8px;
+                border: 1px solid black ;
+                text-align: center;
+            }
+
+            th {
+                background: tomato;
+                color: white;
+            }
+
+            img {
+                border-radius: 50%;
+            }
+
+            button {
+                padding: 8px 12px;
+                border-radius: 5px;
+                border: none;
+                background-color: tomato;
+                color: white;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background: blue;
+            }
+
+            .center {
+                text-align: center;
+            }
+        </style>
+    </head>
     <body>
+        <div class="center" style ="margin-top : 50px ;">
+            <a href="a_dashboard.php"><button type="button">Back</button></a>
+        </div>
         <br>
-        <a href="a_dashboard.php"><button type="button">Back</button></a>
+        <div class = "container">
+            <?php
+            TableHeader();
+            TableRow();
+            ?>
+        </div>
         
     </body>
 </html>
