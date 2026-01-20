@@ -83,7 +83,7 @@ unset( $_SESSION["loginErr"]);
         </style>
     </head>
     <body class="container">
-        <h1 class="center-text" >Manager Login Form</h1>
+        <h1 class="center-text" >Manager Login</h1>
         <div class="container">
             <form method ="post" action="../Controller/m_login_validation.php">
 
@@ -126,6 +126,7 @@ unset( $_SESSION["loginErr"]);
         </div>
 
         <!-- Back Button -->
-<button class="back-btn" onclick="history.back()">Back</button>
+
+<a href="http://localhost/Event%20Management/Web_Technologies_Project_Event_management_/Front.html" ><button class="back-btn" >Back</button></a>
     </body>
 </html>
