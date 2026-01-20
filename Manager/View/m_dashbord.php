@@ -110,7 +110,7 @@ if(!isset($_COOKIE["isLoggedIn"])){
         <p class="welcome">Hi, <strong><?php echo htmlspecialchars($email); ?></strong></p>
 
         <div class="action-btn">
-            <a href="http://localhost/Event%20Management/Web_Technologies_Project_Event_management_/Manager/View/user.php">
+            <a href="http://localhost/Event%20Management/Web_Technologies_Project_Event_management_/Manager/View/event_list.php">
                 View Order List</a>
         </div>
 
