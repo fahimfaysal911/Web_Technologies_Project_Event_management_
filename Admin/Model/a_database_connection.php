@@ -23,6 +23,14 @@ class DatabaseConnection{
         }
         return $result;
     }
+    function add($connection, $tableName,$name, $email, $password){
+        $sql = "INSERT INTO ".$tableName." (name, email, password)  VALUES('".$name."','".$email."', '".$password."')"; ;
+        $result = $connection->query($sql);
+        if(!$result){
+            die("Failed to add ". $connection->error);
+        }
+        return $result;
+    }
 
     function signin($connection, $tableName, $email, $password){
         $sql = "SELECT * FROM ".$tableName." WHERE email='".$email."' AND password='".$password."'";
