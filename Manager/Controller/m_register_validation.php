@@ -1,7 +1,7 @@
 <?php
-include "../Model/databaseconnection.php";
+include "../Model/DatabaseConnection.php";
 
-$path = __DIR__."/../Model/databaseconnection.php";
+$path = __DIR__."/../Model/DatabaseConnection.php";
 if(!file_exists($path)){
     die("Database File not found");
 }
@@ -12,17 +12,23 @@ ini_set("display_error", 1);
 session_start();
 $email = "";
 $pass = "";
+$name = "";
 
 $email = $_POST["email"];
 $pass = $_POST["password"];
+$name = $_POST["name"];
 
 
 echo "Email - $email";
 echo "password - $pass";
+echo "Name - $name";
 
 
 $errors = [];
 $previousValues = [];
+if(!$name){
+$errors["name"] = "Name field is required";
+}
 if(!$email){
 $errors["email"] = "Email field is required";
 }
@@ -43,11 +49,19 @@ if(count($errors) > 0){
          unset($_SESSION["passwordError"]);
     }
 
+     if(!$name){
+        $_SESSION["Name"] = $errors["name"];
+    }else{
+         unset($_SESSION["Name"]);
+    }
+
 
     $previousValues["email"] = $email;
     $_SESSION["previousValues"] = $previousValues;
 
-    Header("Location: ..\View\signup.php");
+    
+
+    Header("Location: ..\View\m_register.php");
 
 }else{
     unset($_SESSION['errors']);
@@ -62,13 +76,13 @@ if(count($errors) > 0){
     //Validation Success
     $db = new DatabaseConnection();
     $connection = $db->openConnection();
-    $result = $db->signup($connection, "users", $email, $pass, $path);
+    $result = $db->signup($connection, "manager", $name, $email, $pass, $path);
 
     if($result){
-        Header("Location: ..\View\login.php");
+        Header("Location: ..\View\m_login.php");
     }else{
         $_SESSION["signupErr"] = "Sign up failed..";
-        Header("Location: ..\View\signup.php");
+        Header("Location: ..\View\m_register.php");
     }
 
     

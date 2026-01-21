@@ -1,12 +1,12 @@
 <?php
 
-class dtabaseconnection{
+class DatabaseConnection{
    
     function openConnection(){
         $db_host="localhost";
         $db_user = "root";
         $db_password = "";
-        $db_name = "priject_management";
+        $db_name = "event_management";
 
         $connection = new mysqli($db_host, $db_user, $db_password, $db_name);
         if($connection->connect_error){
@@ -15,8 +15,31 @@ class dtabaseconnection{
         return $connection;
     }
 
+    function signup($connection, $tableName, $name, $email, $password, $file){
+        $sql = "INSERT INTO ".$tableName." (name, email, password, file_path)  VALUES('".$name."','".$email."', '".$password."', '".$file."')"; ;
+        $result = $connection->query($sql);
+        if(!$result){
+            die("Failed to signup ". $connection->error);
+        }
+        return $result;
+    }
+    //
+    function getManagerProfile($connection, $tableName, $managerId){
+     $sql = "SELECT ID, Name, Email, file_path
+            FROM ".$tableName."
+            WHERE ID = '".$managerId."'";
 
-    function signup($connection, $tableName, $email, $password){
+            $result = $connection->query($sql);
+
+            if(!$result) {
+                die("Failed to fetch profile: " . $connection->error);
+            }
+
+        return $result;
+    }
+///
+
+    function signin($connection, $tableName, $email, $password){
         $sql = "SELECT * FROM ".$tableName." WHERE email='".$email."' AND password='".$password."'";
         $result = $connection->query($sql);
         return $result;
@@ -25,6 +48,19 @@ class dtabaseconnection{
     function checkExistingUser($connection, $tableName, $email){
         $sql = "SELECT * FROM ".$tableName." WHERE email='".$email."'";
         $result = $connection->query($sql);
+        return $result;
+    }
+    function getAllUsers($connection, $tableName){
+        $sql = "SELECT * FROM ".$tableName;
+        $result = $connection->query($sql);
+        return $result;
+    }
+
+    function InsertData($connection,$table,$email, $password){
+        $sql = "INSERT INTO users (email,password) VALUES(?,?)";
+        $stmt=$connection->prepare($sql); 
+        $stmt->bind_param("ss",$email,$password);
+        $result = $stmt->execute();
         return $result;
     }
 

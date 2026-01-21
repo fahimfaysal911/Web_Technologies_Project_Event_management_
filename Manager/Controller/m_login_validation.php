@@ -1,5 +1,5 @@
 <?php
-include "../Model/databaseconnection.php";
+include "../Model/DatabaseConnection.php";
 
 
 error_reporting(E_ALL);
@@ -40,13 +40,13 @@ if(count($errors) > 0){
     $previousValues["email"] = $email;
     $_SESSION["previousValues"] = $previousValues;
 
-    Header("Location: ..\View\login.php");
+    Header("Location: ..\View\m_login.php");
 
 }else{
     //Validation Success
     $db = new DatabaseConnection();
     $connection = $db->openConnection();
-    $result = $db->signin($connection, "users", $email, $pass);
+    $result = $db->signin($connection, "manager", $email, $pass);
 
     if($result->num_rows > 0){
         $_SESSION["isLoggedIn"] = true;
@@ -54,10 +54,10 @@ if(count($errors) > 0){
         setcookie("isLoggedIn", true, time() + 3600,"/");
         setcookie("email", json_encode($email), time() + 3600,"/");
 
-        Header("Location: ..\View\dashboard.php");
+        Header("Location: ..\View\m_dashbord.php");
     }else{
         $_SESSION["loginErr"] = "Email or Password is incorrect";
-        Header("Location: ..\View\login.php");
+        Header("Location: ..\View\m_login.php");
     }
 
     
