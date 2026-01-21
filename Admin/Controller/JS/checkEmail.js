@@ -12,6 +12,7 @@ function findExistingEmail(){
         
         
         };
+
     xhttp.open("POST", "../Controller/checkEmail.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("Email="+Email);
