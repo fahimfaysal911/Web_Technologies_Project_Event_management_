@@ -10,7 +10,7 @@ else{
 
     $connection=new DatabaseConnection();
     $conobj=$connection->openConnection();
-    $result=$connection->checkExistingUser($conobj,"users",$Email);
+    $result=$connection->checkExistingUser($conobj,"manager",$Email);
     if ($result->num_rows > 0)
     {
        echo "Email Already Used";

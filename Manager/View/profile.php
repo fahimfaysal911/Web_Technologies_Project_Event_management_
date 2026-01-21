@@ -4,7 +4,7 @@ session_start();
 
 /* Check login */
 if (!isset($_SESSION['manager_id'])) {
-    header("Location: login.php");
+    header("Location: m_login.php");
     exit();
 }
 
