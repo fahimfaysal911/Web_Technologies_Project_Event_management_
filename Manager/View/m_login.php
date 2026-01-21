@@ -6,7 +6,7 @@ $isLoggedIn = false;
 $isLoggedIn = $_SESSION["isLoggedIn"] ?? false;
 
 if($isLoggedIn){
-    Header("Location: ./a_dashboard.php");
+    Header("Location: ./m_dashboard.php");
 }
 
 
